@@ -81,25 +81,34 @@ def passive():
 # # list_of_jokes = pas_anekdots(URL)
 # # random.shuffle(list_of_jokes)
 
-
-# def listen():
-# 	while True:
-# 		data = stream.read(4000, exception_on_overflow=False)
-# 		if (rec.AcceptWaveform(data)) and (len(data) > 0):
-# 			answer = json.loads(rec.Result())
-
-				
+import pyaudio
+rec = KaldiRecognizer(model, 16000)
+p = pyaudio.PyAudio()
+stream =  p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8000)
+stream.start_stream()
 
 
+def listen():
+	while True:
+		data = stream.read(4000, exception_on_overflow=False)
+		if (rec.AcceptWaveform(data)) and (len(data) > 0):
+			answer = json.loads(rec.Result())
+			if answer['text']:
+				return answer['text']
 
-# def search():
-   
 
-#         webbrowser.open_new_tab('https://www.google.com/search?q='+str(listen()))
-		
-#         webbrowser.open_new_tab('https://www.google.com/search?q=' +str(listen())) 
-		
-#         webbrowser.open_new_tab('https://www.google.com/search?q=' + str(listen())) 
+
+
+for i in listen():
+	print(i)
+
+
+
+
+def search():
+
+
+	webbrowser.open_new_tab('https://www.google.com/search?q='+str(listen()))
 
 
 
@@ -115,7 +124,7 @@ def spotify():
 
 
 
-def golos():
+
 	
 
 
@@ -127,6 +136,6 @@ def bloknot():
 
 
 	with open('spisok.txt', 'a') as file:
-		file.write(f'!{main}\n')
+		file.write(f'!{listen()}\n')
 
-	return f'Задача {query} добавлена:)'
+	return f'Задача {listen()} добавлена:)'
