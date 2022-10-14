@@ -1,3 +1,4 @@
+import json
 import os
 import webbrowser
 import sys
@@ -8,6 +9,14 @@ import requests
 from bs4 import BeautifulSoup as b
 import random
 import re
+from vosk import KaldiRecognizer
+from app import model, main
+import fuzzywuzzy
+
+
+
+
+
 
 
 def browser():
@@ -16,12 +25,9 @@ def browser():
 	webbrowser.open('https://www.google.com/webhp?hl=ru&sa=X&ved=0ahUKEwjIgqfw0cb6AhXPmosKHRV8AbcQPAgI', new=2)
 
 
-# def game():
-# 	'''Нужно разместить путь к exe файлу любого вашего приложения'''
-# 	try:
-# 		open.r(main.py)
-# 	except:
-# 		voice.speaker('Путь к файлу не найден, проверьте, правильный ли он')
+def game():	
+		open(r'C:\\Users\\danie\\OneDrive\\Рабочий стол\\Alesha_final\\main.py')
+        
 
 
 def offpc():
@@ -56,6 +62,9 @@ def passive():
 	pass
 
 
+
+
+
 # URL = 'https://www.anekdot.ru/last/good/'
 
 
@@ -71,12 +80,53 @@ def passive():
 
 # # list_of_jokes = pas_anekdots(URL)
 # # random.shuffle(list_of_jokes)
-def search():
-    call = input('Введите ссылку или запрос: ')
-    if re.search(r'\.', call):
-        webbrowser.open_new_tab('https://' + call)
-    elif re.search(r'\ ', call):
-        webbrowser.open_new_tab('https://yandex.ru/search/?text='+call)
-    else:
-        webbrowser.open_new_tab('https://yandex.ru/search/?text=' + call) 
 
+
+# def listen():
+# 	while True:
+# 		data = stream.read(4000, exception_on_overflow=False)
+# 		if (rec.AcceptWaveform(data)) and (len(data) > 0):
+# 			answer = json.loads(rec.Result())
+
+				
+
+
+
+# def search():
+   
+
+#         webbrowser.open_new_tab('https://www.google.com/search?q='+str(listen()))
+		
+#         webbrowser.open_new_tab('https://www.google.com/search?q=' +str(listen())) 
+		
+#         webbrowser.open_new_tab('https://www.google.com/search?q=' + str(listen())) 
+
+
+
+
+
+
+
+def spotify():
+
+	webbrowser.open('https://open.spotify.com/', new=2)
+
+
+
+
+
+def golos():
+	
+
+
+def bloknot():
+	
+	voice.speaker('Что будем добавлять?')
+    
+    
+
+
+	with open('spisok.txt', 'a') as file:
+		file.write(f'!{main}\n')
+
+	return f'Задача {query} добавлена:)'

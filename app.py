@@ -40,10 +40,10 @@ import vosk                 #pip install vosk
 
 import json
 import queue
-
-import words
 from skills import *
+import words
 import voice
+import pyaudio
 
 
 q = queue.Queue()
@@ -55,6 +55,12 @@ model = vosk.Model('model_small')       #голосовую модель vosk н
 device = sd.default.device     # <--- по умолчанию
                                 #или -> sd.default.device = 1, 3, python -m sounddevice просмотр 
 samplerate = int(sd.query_devices(device[0], 'input')['default_samplerate'])  #получаем частоту микрофона
+
+
+# rec = KaldiRecognizer(model, 16000)
+# p = pyaudio.PyAudio()
+# stream =  p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8000)
+# stream.start_stream()
 
 
 def callback(indata, frames, time, status):

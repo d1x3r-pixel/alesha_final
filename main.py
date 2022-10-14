@@ -27,6 +27,7 @@ snake_pos = {
     "y_change": 0
 }
  
+
 # snake el size
 snake_size = (10, 10)
  
