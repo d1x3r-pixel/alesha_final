@@ -135,7 +135,7 @@ def bloknot():
     
 
 
-	with open('spisok.txt', 'a') as file:
+	with open('spisok.txt', 'a', encoding="utf-8") as file:
 		file.write(f'!{listen()}\n')
 
 	return f'Задача {listen()} добавлена:)'

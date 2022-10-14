@@ -5,9 +5,11 @@ cffi==1.15.0
 charset-normalizer==2.0.12
 colorama==0.4.5
 comtypes==1.1.11
+fuzzywuzzy==0.18.0
 idna==3.3
 joblib==1.1.0
 numpy==1.23.0
+PyAudio==0.2.12
 pycparser==2.21
 pygame==2.1.2
 pypiwin32==223
@@ -18,6 +20,7 @@ scikit-learn==1.1.1
 scipy==1.8.1
 sounddevice==0.4.4
 soupsieve==2.3.2.post1
+SpeechRecognition==3.8.1
 srt==3.5.2
 threadpoolctl==3.1.0
 tqdm==4.64.0
