@@ -99,14 +99,9 @@ def listen():
 				return answer['text']
 
 
-for i in listen():
-	print(i)
-
-
 
 
 def search():
-
 
 	webbrowser.open_new_tab('https://www.google.com/search?q='+str(listen()))
 
@@ -116,11 +111,10 @@ def spotify():
 	webbrowser.open('https://open.spotify.com/', new=2)
 
 
+
+
 def bloknot():
-	
-	voice.speaker('Что будем добавлять?')
-    
-    
+
 
 
 	with open('spisok.txt', 'a', encoding="utf-8") as file:
