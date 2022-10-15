@@ -25,8 +25,10 @@ def browser():
 	webbrowser.open('https://www.google.com/webhp?hl=ru&sa=X&ved=0ahUKEwjIgqfw0cb6AhXPmosKHRV8AbcQPAgI', new=2)
 
 
+
 def game():	
-		open(r'C:\\Users\\danie\\OneDrive\\Рабочий стол\\Alesha_final\\main.py')
+	exec(open('main.py').read())
+
         
 
 
@@ -97,8 +99,6 @@ def listen():
 				return answer['text']
 
 
-
-
 for i in listen():
 	print(i)
 
@@ -111,21 +111,9 @@ def search():
 	webbrowser.open_new_tab('https://www.google.com/search?q='+str(listen()))
 
 
-
-
-
-
-
 def spotify():
 
 	webbrowser.open('https://open.spotify.com/', new=2)
-
-
-
-
-
-
-	
 
 
 def bloknot():
