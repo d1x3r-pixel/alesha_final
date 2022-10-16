@@ -68,6 +68,8 @@ def callback(indata, frames, time, status):
     q.put(bytes(indata))
 
 
+
+
 def recognize(data, vectorizer, clf):
     '''
     Анализ распознанной речи

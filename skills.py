@@ -1,3 +1,4 @@
+import datetime
 import json
 import os
 import webbrowser
@@ -25,10 +26,25 @@ def browser():
 	webbrowser.open('https://www.google.com/webhp?hl=ru&sa=X&ved=0ahUKEwjIgqfw0cb6AhXPmosKHRV8AbcQPAgI', new=2)
 
 
+def time():
+
+    now = datetime.datetime.now()
+    voice.speaker("Сейчас " + str(now.hour) +  ":" + str(now.minute))
+
+
+
+
+def browse_k():
+
+	webbrowser.open('https://www.kinopoisk.ru/')
+
 
 def game():	
 	exec(open('main.py').read())
 
+
+# def start():
+# 	voice.speaker('Добрый день, Алина слушает')
         
 
 
@@ -121,3 +137,7 @@ def bloknot():
 		file.write(f'!{listen()}\n')
 
 	return f'Задача {listen()} добавлена:)'
+
+
+
+
