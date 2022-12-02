@@ -17,7 +17,7 @@ import fuzzywuzzy
 
 
 
-
+	
 
 
 def browser():
@@ -56,8 +56,6 @@ def offpc():
 
 
 def weather():
-	'''Для работы этого кода нужно зарегистрироваться на сайте
-	https://openweathermap.org или переделать на ваше усмотрение под что-то другое'''
 	# try:
 	params = {'q': 'Bishkek', 'units': 'metric', 'lang': 'ru', 'appid': 'd99fdfe2133e692f8c1e41f784b47a90'}
 	response = requests.get(f'https://api.openweathermap.org/data/2.5/weather', params=params)
@@ -71,12 +69,10 @@ def weather():
 
 
 def offBot():
-	'''Отключает бота'''
 	sys.exit()
 
 
 def passive():
-	'''Функция заглушка при простом диалоге с ботом'''
 	pass
 
 
@@ -136,7 +132,7 @@ def bloknot():
 	with open('spisok.txt', 'a', encoding="utf-8") as file:
 		file.write(f'!{listen()}\n')
 
-	return f'Задача {listen()} добавлена:)'
+	return voice.speaker(f'Задача {listen()} добавлена:)')
 
 
 
